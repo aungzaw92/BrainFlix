@@ -1,0 +1,77 @@
+@use "./responsive" as *;
+
+@font-face {
+  font-family: "Avenir Next Pro";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Avenir Next Pro";
+  src: url("../../assets/fonts/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+$primary-font: "Avenir Next Pro";
+
+// MOBILE TEXT STYLES
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: bold;
+  // DESKTOP & TABLET TEXT STYLES
+  @include tablet {
+    font-size: 2.0625rem;
+    line-height: 2.75rem;
+  }
+}
+
+h2 {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  // DESKTOP & TABLET TEXT STYLES
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+p {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: normal;
+  // DESKTOP & TABLET TEXT STYLES
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+
+@mixin labelFont {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: bold;
+  // DESKTOP & TABLET TEXT STYLES
+  @include tablet {
+    font-size: 0.75rem;
+  }
+}
+@mixin inputFont {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: normal;
+  // DESKTOP & TABLET TEXT STYLES
+  @include tablet {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}

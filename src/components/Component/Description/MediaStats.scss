@@ -1,0 +1,38 @@
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/variables" as *;
+
+/* Stat Section Styles */
+.media-stat {
+  display: flex;
+  width: 100%;
+
+  // Adjust alignment for Tablet screens
+  @include tablet {
+    justify-content: space-between;
+  }
+
+  // Sub-sections within the stats
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-between-components-mobile;
+    width: 50%;
+
+    // Adjust layout for Tablet screens
+    @include tablet {
+      flex-direction: row;
+      width: auto;
+    }
+
+    // Additional padding for Desktop screens
+    @include desktop {
+      padding-right: $spacing-between-components-mobile;
+    }
+  }
+
+  &__date {
+    color: $BrainFlix-Silver;
+  }
+}

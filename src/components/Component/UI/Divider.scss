@@ -1,0 +1,7 @@
+// Import partial for colors
+@use "../../../styles/partials/varaibles" as *;
+
+.divider-component {
+  width: 100%;
+  border-top: $divider-stroke-width solid $BrainFlix-Mercury;
+}

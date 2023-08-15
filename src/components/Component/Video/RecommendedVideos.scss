@@ -1,0 +1,12 @@
+// Import partials for colors, typography, responsiveness, and variables
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/variables" as *;
+
+.recommended {
+  &__heading {
+    padding-left: $spacing-between-components-mobile;
+    color: $BrainFlix-Silver;
+  }
+}

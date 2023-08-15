@@ -1,0 +1,37 @@
+// Import partials for colors, typography, responsiveness, and variables
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/variables" as *;
+
+$input-area {
+  box-sizing: border-box;
+
+  &__label {
+    @include labelFontStyles;
+    color: $BrainFlix-Silver;
+  }
+
+  &__content {
+    font-family: $font-primary;
+    color: $BrainFlix-Black;
+    background-color: $BrainFlix-Alabaster;
+    padding: $input-padding-small;
+    border: $BrainFlix-Mercury solid $input-border;
+    border-radius: $input-radius;
+    outline: none;
+    width: 100%;
+
+    // Apply input font styles
+    @include inputFontStyles;
+
+    &::placeholder {
+      font-family: $font-primary;
+      color: $BrainFlix-Black;
+    }
+
+    &:focus-within {
+      border: $input-border $BrainFlix-Blue solid;
+    }
+  }
+}

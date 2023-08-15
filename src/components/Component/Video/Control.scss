@@ -1,0 +1,26 @@
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/variables" as *;
+
+.control {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.control__track {
+  background-color: $BrainFlix-Silver;
+  flex-grow: 1;
+  height: 4px;
+  border-radius: 2px;
+}
+
+.control__duration {
+  color: $BrainFlix-Black;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  margin-left: 1rem;
+}
