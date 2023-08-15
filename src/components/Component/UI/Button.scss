@@ -1,0 +1,49 @@
+// Import partials for colors, typography, and responsiveness
+@use "../../../styles/partials/colors" as *;
+@use "../../../styles/partials//fonts" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/global" as *;
+
+.button-component {
+  background-color: $BrainFlix-Blue;
+  width: 100%;
+  height: $button-height;
+  border: none;
+  border-radius: $button-border-radius;
+  display: flex;
+  align-items: center;
+
+  // Adjust styles for medium screens
+  @include tablet {
+    min-width: 9.375rem;
+    padding: 0 $button-padding-small;
+    width: auto;
+  }
+
+  &__icon {
+    justify-self: start;
+    height: 1.25rem;
+  }
+
+  &__text {
+    @include labelFontStyles;
+    color: $BrainFlix-White;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+
+    // Adjust styles for tablet screens
+    @include tablet {
+      width: auto;
+      position: relative;
+      justify-self: center;
+      text-align: left;
+      margin-left: $button-padding-small;
+    }
+  }
+
+  &:hover {
+    background-color: $BrainFlix-DarkBlue;
+    cursor: pointer;
+  }
+}

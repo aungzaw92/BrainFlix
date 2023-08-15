@@ -1,0 +1,15 @@
+// Import partials for colors, typography, responsiveness, and variables
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/varaibles" as *;
+
+.icon-counter-component {
+  display: flex;
+  align-items: center;
+  gap: calc($spacing-between-components-mobile / 2);
+
+  &__count {
+    color: $BrainFlix-Silver;
+  }
+}

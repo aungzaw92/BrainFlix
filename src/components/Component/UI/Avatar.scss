@@ -1,0 +1,27 @@
+// Import partials for colors and responsiveness
+@use "../../../styles/partials/colors" as *;
+@use "../../../styles/partials/responsive" as *;
+
+.avatar-component {
+  &__image {
+    border-radius: $avatar-border-radius;
+    height: $max-diameter-mobile;
+    width: $max-diameter-mobile;
+    object-fit: cover;
+    overflow: hidden;
+
+    // Adjust size for Tablet screens
+    @include tablet {
+      height: $max-diameter-tablet;
+      width: $max-diameter-tablet;
+    }
+  }
+
+  &__placeholder {
+    border-radius: $avatar-border-radius;
+    width: $max-diameter-mobile;
+    height: $max-diameter-mobile;
+    overflow: hidden;
+    background-color: $BrainFlix-Mercury;
+  }
+}
