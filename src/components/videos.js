@@ -7,4 +7,4 @@ const findVideoIndexById = (targetId, videoList) => {
   return -1;
 };
 
-export default { findVideoIndexById };
+export default  findVideoIndexById ;

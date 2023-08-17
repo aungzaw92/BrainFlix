@@ -1,18 +1,8 @@
-// import logo from "./logo.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./App.scss";
-//Import NavBar
-//Import VideoPlayer
-//Import API Server
-//Import Description
-//Import Comment Section
-//Import Avatar Image
-//Import Recommended Videos
-//Import Video Helpers
 
 import NavBar from "./components/Component/NavBar/NavBar";
 import VideoPlayer from "./components/Component/Video/VideoPlayer";
-import apiService from "./components/apiService";
 import Description from "./components/Component/Description/Description";
 import CommentSection from "./components/Component/Comment/CommentSection";
 import avatarImg from "./assets/images/Mohan-muruge.jpg";
@@ -20,33 +10,24 @@ import RecommendedVideos from "./components/Component/Video/RecommendedVideos";
 import videoHelpers from "./components/videos";
 
 function App() {
-  const [video, setVideo] = useState("");
-  const [videos, setVideos] = useState("");
-  const [currentVideoID, setCurrentVideoID] = useState(0);
-
-  useEffect(() => {
-    apiService.getVideos().then((response) => {
-      setVideo(response[currentVideoID]);
-    });
-    apiService.getVideosMinified().then((response) => {
-      setVideos(response);
-    });
-  }, [currentVideoID]);
-
+  const [currentVideo, ] = useState({});
+  const [videoList, ] = useState([]); 
+  const [, setCurrentVideoID] = useState(0); 
   const handleDisplayVideo = (e) => {
-    setCurrentVideoID(videoHelpers.getVideoIndexById(e.target.id, videos));
+    const clickedVideoId = e.target.id;
+    setCurrentVideoID(videoHelpers.getVideoIndexById(clickedVideoId, videoList));
   };
 
   return (
     <>
       <NavBar avatarImg={avatarImg} userName={"User"} />
-      <VideoPlayer mediaObject={video} />
+      <VideoPlayer mediaObject={currentVideo} />
       <main className="page__content">
         <section className="page__main-content">
-          <Description mediaObject={video} />
-          {video.comments ? (
+          <Description mediaObject={currentVideo} />
+          {currentVideo.comments ? (
             <CommentSection
-              comments={video.comments}
+              comments={currentVideo.comments}
               avatarImg={avatarImg}
               userName={"User"}
             />
@@ -54,8 +35,8 @@ function App() {
         </section>
         <aside className="page__side-content">
           <RecommendedVideos
-            videos={videos}
-            currentVideo={video}
+            videos={videoList}
+            currentVideo={currentVideo}
             handleClick={handleDisplayVideo}
           />
         </aside>

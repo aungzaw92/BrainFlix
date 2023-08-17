@@ -1,5 +1,6 @@
 import VideoCard from "./VideoCard";
 import "./RecommendedVideos.scss";
+
 const RecommendedVideos = ({ videos, currentVideo, handleClick }) => {
   return (
     <section className="recommended">
@@ -15,9 +16,11 @@ const RecommendedVideos = ({ videos, currentVideo, handleClick }) => {
                 />
               );
             }
+            return null; // Add this line to return null for non-matching videos
           })
         : null}
     </section>
   );
 };
+
 export default RecommendedVideos;
