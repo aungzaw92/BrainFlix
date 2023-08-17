@@ -1,8 +1,8 @@
 // Import partials for colors, typography, responsiveness, and variables
-@use "../../styles/partials/global" as *;
-@use "../../styles/partials/fonts" as *;
-@use "../../styles/partials/responsive" as *;
-@use "../../styles/partials/variables" as *;
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/varaibles" as *;
 
 /* Comment Component Styles */
 .comment {
@@ -11,7 +11,7 @@
   padding: $spacing-between-components-mobile 0;
 
   // Additional padding for larger screens
-  @include breakpoint-desktop {
+  @include desktop {
     padding-right: $spacing-between-components-mobile;
   }
 

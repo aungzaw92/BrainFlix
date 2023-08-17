@@ -10,15 +10,14 @@ import "./App.scss";
 //Import Recommended Videos
 //Import Video Helpers
 
-import NavBar from "./components/layout/Navbar";
-import VideoPlayer from "./components/video/VideoPlayer";
-import apiService from "./utils/services/apiService";
-import Description from "./components/description/Description";
-import CommentSection from "./components/comments/CommentSection";
-
+import NavBar from "./components/Component/NavBar/NavBar";
+import VideoPlayer from "./components/Component/Video/VideoPlayer";
+import apiService from "./components/apiService";
+import Description from "./components/Component/Description/Description";
+import CommentSection from "./components/Component/Comment/CommentSection";
 import avatarImg from "./assets/images/Mohan-muruge.jpg";
-import RecommendedVideos from "./components/recommended/RecommendedVideos";
-import videoHelpers from "./utils/helpers/videos";
+import RecommendedVideos from "./components/Component/Video/RecommendedVideos";
+import videoHelpers from "./components/videos";
 
 function App() {
   const [video, setVideo] = useState("");

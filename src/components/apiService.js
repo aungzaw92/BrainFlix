@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const fetchVideoDetails = async () => {
+const getVideos = async () => {
   try {
-    const response = await axios.get("./db/video-details.json");
+    const response = await axios.get("./data/video-details.json");
     return response.data;
   } catch (error) {
     console.error(error);
@@ -10,9 +10,9 @@ const fetchVideoDetails = async () => {
   }
 };
 
-const fetchMinifiedVideos = async () => {
+const getVideosMinified = async () => {
   try {
-    const response = await axios.get("./db/videos.json");
+    const response = await axios.get("./data/videos.json");
     return response.data;
   } catch (error) {
     console.error(error);
@@ -20,4 +20,4 @@ const fetchMinifiedVideos = async () => {
   }
 };
 
-export default { fetchVideoDetails, fetchMinifiedVideos };
+export default { getVideos, getVideosMinified };

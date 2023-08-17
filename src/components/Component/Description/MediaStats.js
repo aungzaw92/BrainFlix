@@ -6,8 +6,8 @@ import IconCounter from "../UI/IconCounter";
 
 import "./MediaStats.scss";
 
-const MediaStats = ({ videoContent }) => {
-  const { views, likes, channel, timestamp } = videoContent;
+const MediaStats = ({ mediaObject }) => {
+  const { views, likes, channel, timestamp } = mediaObject;
   const [formattedDate, setFormattedDate] = useState("");
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import playIcon from "../../../assets/images/icons/play.svg";
-import pauseIcon from "../../assets/images/icons/pause.svg";
+import pauseIcon from "../../../assets/images/icons/pause.svg";
 import "./PlayButton.scss";
 
 const PlayButton = ({ handleClick }) => {

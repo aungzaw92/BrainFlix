@@ -2,36 +2,37 @@
 @use "../../../styles/partials/global" as *;
 @use "../../../styles/partials/fonts" as *;
 @use "../../../styles/partials/responsive" as *;
-@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/varaibles" as *;
 
-$input-area {
+.input-area {
+  // Changed from $input-area to .input-area
   box-sizing: border-box;
 
   &__label {
-    @include labelFontStyles;
-    color: $BrainFlix-Silver;
+    @include labelFont;
+    color: $BrainFlix-Silver; // Use the correct variable name
   }
 
   &__content {
-    font-family: $font-primary;
-    color: $BrainFlix-Black;
-    background-color: $BrainFlix-Alabaster;
-    padding: $input-padding-small;
-    border: $BrainFlix-Mercury solid $input-border;
+    font-family: $primary-font;
+    color: $BrainFlix-Black; // Use the correct variable name
+    background-color: $BrainFlix-Alabaster; // Use the correct variable name
+    padding: $input-padding-mobile;
+    border: $BrainFlix-Mercury solid $input-border; // Use the correct variable name
     border-radius: $input-radius;
     outline: none;
     width: 100%;
 
     // Apply input font styles
-    @include inputFontStyles;
+    @include inputFont;
 
     &::placeholder {
-      font-family: $font-primary;
-      color: $BrainFlix-Black;
+      font-family: $primary-font;
+      color: $BrainFlix-Black; // Use the correct variable name
     }
 
     &:focus-within {
-      border: $input-border $BrainFlix-Blue solid;
+      border: $input-border $BrainFlix-Blue solid; // Use the correct variable name
     }
   }
 }

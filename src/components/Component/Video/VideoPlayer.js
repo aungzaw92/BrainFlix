@@ -3,8 +3,8 @@ import PlayButton from "./PlayButton";
 import Control from "./Control";
 import "./VideoPlayer.scss";
 
-const VideoPlayer = ({ videoObject }) => {
-  const { video, image, duration } = videoObject;
+const VideoPlayer = ({ mediaObject }) => {
+  const { video, image, duration } = mediaObject;
 
   return (
     <section className="video">

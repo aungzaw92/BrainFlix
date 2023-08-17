@@ -1,8 +1,8 @@
 // Import partials for colors, typography, and responsiveness
-@use "../../../styles/partials/colors" as *;
-@use "../../../styles/partials//fonts" as *;
-@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/fonts" as *;
 @use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/varaibles" as *;
 
 .button-component {
   background-color: $BrainFlix-Blue;
@@ -26,7 +26,7 @@
   }
 
   &__text {
-    @include labelFontStyles;
+    @include labelFont;
     color: $BrainFlix-White;
     text-align: center;
     width: 100%;
