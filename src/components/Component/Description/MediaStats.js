@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import eyeballIcon from "../../../assets/images/icons/views.svg";
 import heartIcon from "../../../assets/images/icons/likes.svg";
-import dateFormat from "../../dateFormat";
+import getFormattedDate from "../../dateFormat";
 import IconCounter from "../UI/IconCounter";
 
 import "./MediaStats.scss";
-
+console.log("Aung", getFormattedDate);
 const MediaStats = ({ mediaObject }) => {
   const { views, likes, channel, timestamp } = mediaObject;
   const [formattedDate, setFormattedDate] = useState("");
 
   useEffect(() => {
     if (timestamp) {
-      setFormattedDate(dateFormat.getSimplifiedFormat(timestamp));
+      setFormattedDate(getFormattedDate(timestamp));
     }
   }, [timestamp]);
 

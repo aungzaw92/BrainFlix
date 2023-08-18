@@ -8,14 +8,24 @@ import CommentSection from "./components/Component/Comment/CommentSection";
 import avatarImg from "./assets/images/Mohan-muruge.jpg";
 import RecommendedVideos from "./components/Component/Video/RecommendedVideos";
 import videoHelpers from "./components/videos";
+import videodata from "./data/video-details.json";
+console.log(videodata);
 
 function App() {
-  const [currentVideo, ] = useState({});
-  const [videoList, ] = useState([]); 
-  const [, setCurrentVideoID] = useState(0); 
+  const [videoList] = useState([]);
+  const [currentVideoID, setCurrentVideoID] = useState(
+    "84e96018-4022-434e-80bf-000ce4cd12b8"
+  );
+  const tempVideo = videodata.find((video) => video.id == currentVideoID);
+  const [currentVideo, setcurrentVideo] = useState(tempVideo);
+  console.log(currentVideo);
+  // videodata[currentVideoID];
+  // console.log(videodata.find[currentVideoID]);
   const handleDisplayVideo = (e) => {
     const clickedVideoId = e.target.id;
-    setCurrentVideoID(videoHelpers.getVideoIndexById(clickedVideoId, videoList));
+    setCurrentVideoID(
+      videoHelpers.getVideoIndexById(clickedVideoId, videoList)
+    );
   };
 
   return (
