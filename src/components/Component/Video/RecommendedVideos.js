@@ -1,4 +1,5 @@
 import VideoCard from "./VideoCard";
+import videodata from "../../../data/video-details.json";
 import "./RecommendedVideos.scss";
 
 const RecommendedVideos = ({ videos, currentVideo, handleClick }) => {

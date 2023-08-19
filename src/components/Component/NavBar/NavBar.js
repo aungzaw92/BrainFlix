@@ -5,7 +5,7 @@ import searchIcon from "../../../assets/images/icons/search.svg";
 import Avatar from "../UI/Avatar";
 import Button from "../UI/Button";
 import InputBox from "../UI/InputBox";
-
+import avatarImg from "../../../assets/images/Mohan-muruge.jpg";
 import "./NavBar.scss";
 
 const NavBar = ({ userAvatar, userName }) => {
@@ -20,7 +20,7 @@ const NavBar = ({ userAvatar, userName }) => {
       </div>
 
       <Button text={"Upload"} iconSrc={uploadIcon} />
-      <Avatar userName={userName} avatarSrc={userAvatar} />
+      <Avatar userName={userName} avatarSrc={avatarImg} />
     </div>
   );
 };

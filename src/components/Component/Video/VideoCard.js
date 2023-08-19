@@ -1,8 +1,8 @@
 import React from "react";
 import "./VideoCard.scss";
 
-const VideoCard = ({ videoInfo, handleClick }) => {
-  const { title, channel, image, id } = videoInfo;
+const VideoCard = ({ video, handleClick }) => {
+  const { title, channel, image, id } = video;
 
   return (
     <div className="video-card">

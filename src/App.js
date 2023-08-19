@@ -9,10 +9,13 @@ import avatarImg from "./assets/images/Mohan-muruge.jpg";
 import RecommendedVideos from "./components/Component/Video/RecommendedVideos";
 import videoHelpers from "./components/videos";
 import videodata from "./data/video-details.json";
+import videosJson from "./data/videos.json";
 console.log(videodata);
 
 function App() {
-  const [videoList] = useState([]);
+  // const [videoList] = useState([]);
+  const [videos, setVideos] = useState(videosJson);
+
   const [currentVideoID, setCurrentVideoID] = useState(
     "84e96018-4022-434e-80bf-000ce4cd12b8"
   );
@@ -23,9 +26,7 @@ function App() {
   // console.log(videodata.find[currentVideoID]);
   const handleDisplayVideo = (e) => {
     const clickedVideoId = e.target.id;
-    setCurrentVideoID(
-      videoHelpers.getVideoIndexById(clickedVideoId, videoList)
-    );
+    setCurrentVideoID(videoHelpers.getVideoIndexById(clickedVideoId, videos));
   };
 
   return (
@@ -45,7 +46,7 @@ function App() {
         </section>
         <aside className="page__side-content">
           <RecommendedVideos
-            videos={videoList}
+            videos={videos}
             currentVideo={currentVideo}
             handleClick={handleDisplayVideo}
           />
