@@ -60,6 +60,7 @@ p {
   font-size: 0.625rem;
   line-height: 1.25rem;
   font-weight: bold;
+  text-transform: uppercase;
   // DESKTOP & TABLET TEXT STYLES
   @include tablet {
     font-size: 0.75rem;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import dateFormat from "../../dateFormat";
+import getFormattedDate from "../../dateFormat";
 import Avatar from "../UI/Avatar";
 import Divider from "../UI/Divider";
 
@@ -9,7 +9,7 @@ const Comment = ({ commentObject }) => {
   const { name, comment, timestamp } = commentObject;
   const [date, setDate] = useState("");
   useEffect(() => {
-    setDate(dateFormat.getSimplifiedFormat(timestamp));
+    setDate(getFormattedDate(timestamp));
   }, [timestamp]);
   return (
     <>

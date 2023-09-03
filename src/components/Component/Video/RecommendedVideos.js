@@ -1,6 +1,12 @@
-import VideoCard from "../VideoCard";
+import { useNavigate } from "react-router-dom";
+import VideoCard from "./VideoCard";
 import "./RecommendedVideos.scss";
+
 const RecommendedVideos = ({ videos, currentVideo, handleClick }) => {
+  const navigate = useNavigate();
+  const handleGoToVideoPage = (id) => {
+    navigate (`../${id}`, { state: {videos}});
+  }
   return (
     <section className="recommended">
       <h2 className="recommended__heading">Next Videos</h2>
@@ -11,13 +17,15 @@ const RecommendedVideos = ({ videos, currentVideo, handleClick }) => {
                 <VideoCard
                   key={video.id}
                   video={video}
-                  handleClick={handleClick}
+                  handleClick={handleGoToVideoPage}
                 />
               );
             }
+            return null; // Add this line to return null for non-matching videos
           })
         : null}
     </section>
   );
 };
+
 export default RecommendedVideos;

@@ -1,10 +1,10 @@
-const findVideoIndexById = (targetId, videoList) => {
-  for (let i = 0; i < videoList.length; i++) {
-    if (videoList[i].id === targetId) {
+const findVideoIndexById = (id, videos) => {
+  for (let i = 0; i < videos.length; i++) {
+    if (videos[i].id === id) {
       return i;
     }
   }
   return -1;
 };
 
-export default { findVideoIndexById };
+export default findVideoIndexById;

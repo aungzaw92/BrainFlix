@@ -1,0 +1,75 @@
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/varaibles" as *;
+
+.upload-form {
+    display: flex;
+    flex-direction: column;
+    padding-top: $spacing-between-components-mobile;
+    gap: $spacing-between-components-mobile;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      padding-top: $spacing-between-components-mobile;
+      gap: $spacing-between-components-mobile;
+      @include desktop {
+        flex-direction: row;
+        width: 100%;
+        gap: $spacing-between-components-mobile;
+        max-height: min-content;
+      }
+    }
+    &__label {
+      @include labelFont;
+      color: $BrainFlix-Silver;
+    }
+    &__image {
+      max-width: 100%;
+      border-radius: $default-border-radius;
+    }
+    &__image-container {
+      max-width: 100%;
+      @include tablet {
+        max-width: 50%;
+      }
+      @include desktop {
+        width: 30%;
+      }
+    }
+    &__input-container {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-between-components-mobile;
+      padding: $spacing-between-components-mobile;
+      flex-grow: 1;
+      @include desktop {
+        justify-content: start;
+        .input-area__content,
+        .input-area {
+          height: 100%;
+        }
+      }
+    }
+    &__button-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: $spacing-between-components-mobile;
+      @include tablet {
+        flex-direction: row-reverse;
+        justify-content: flex-start;
+      }
+    }
+    &__link {
+      @include labelFont;
+      text-decoration: none;
+      color: $BrainFlix-Blue;
+      text-align: center;
+      background: transparent;
+      border: none;
+      outline: none;
+      min-width: 9.375rem;
+    }
+  }

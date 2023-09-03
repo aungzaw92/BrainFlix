@@ -4,7 +4,12 @@ import "./CommentSection.scss";
 import Divider from "../UI/Divider";
 import CommentGallery from "./CommentGallery";
 
-const CommentSection = ({ existingComments, userAvatar, userName }) => {
+const CommentSection = ({
+  comments,
+  userAvatar,
+  userName,
+  handleNewComment,
+}) => {
   const [newCommentText, setNewCommentText] = useState("");
 
   const handleNewCommentChange = (event) => {
@@ -14,12 +19,14 @@ const CommentSection = ({ existingComments, userAvatar, userName }) => {
   const handlePostNewComment = (event) => {
     event.preventDefault();
     // Implement logic to post new comment
+    handleNewComment(newCommentText);
+    setNewCommentText("");
   };
 
   return (
     <div className="comment-section">
       <h3 className="comment-section__comment-count">
-        {existingComments.length} comments
+        {comments.length} comments
       </h3>
       <AddComment
         value={newCommentText}
@@ -28,8 +35,9 @@ const CommentSection = ({ existingComments, userAvatar, userName }) => {
         avatarSrc={userAvatar}
         userName={userName}
       />
+
       <Divider />
-      <CommentGallery comments={existingComments} />
+      <CommentGallery comments={comments} />
     </div>
   );
 };

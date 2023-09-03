@@ -1,4 +1,3 @@
-import React from "react";
 import "./InputArea.scss";
 
 const InputAreaComponent = ({
@@ -7,10 +6,11 @@ const InputAreaComponent = ({
   inputPlaceholder,
   inputId,
   inputLabel,
+  customRef
 }) => {
   return (
-    <>
-      <label htmlFor={inputId} className="input-area-component__label">
+    <span className="input-area">
+      <label htmlFor={inputId} className="input-area__label">
         {inputLabel}
       </label>
       <textarea
@@ -19,9 +19,10 @@ const InputAreaComponent = ({
         placeholder={inputPlaceholder}
         value={inputValue}
         onChange={handleInputChange}
-        className="input-area-component__content"
+        className="input-area__content"
+        ref={customRef}
       ></textarea>
-    </>
+    </span>
   );
 };
 

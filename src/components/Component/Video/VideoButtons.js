@@ -1,31 +1,34 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import closeFullscreenSrc from "../../../assets/images/icons/close_fullscreen.svg";
 import openFullscreenSrc from "../../../assets/images/icons/fullscreen.svg";
-import muteVolumeSrc from "../../../assets/images/icons/volume_off.svg";
-import unmuteVolumeSrc from "../../../assets/images/icons/volume_up.svg";
+// import muteVolumeSrc from "../../../assets/images/icons/volume_off.svg";
+// import unmuteVolumeSrc from "../../../assets/images/icons/volume_up.svg";
 
 import "./VideoButtons.scss";
 
 const VideoButtons = ({ handleSizeChange, handleVolumeChange }) => {
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
+  // const [isMuted, setIsMuted] = useState(false);
 
   const handleToggleFullscreen = () => {
     setIsFullscreen(!isFullscreen);
   };
 
-  const handleToggleMuted = () => {
-    setIsMuted(!isMuted);
-  };
+  // const handleToggleMuted = () => {
+  //   setIsMuted(!isMuted);
+  // };
+
+  const memoizedHandleSizeChange = useCallback(handleSizeChange, [handleSizeChange]);
+  const memoizedHandleVolumeChange = useCallback(handleVolumeChange, [handleVolumeChange]);
 
   useEffect(() => {
-    if (handleSizeChange && isFullscreen) {
-      handleSizeChange();
+    if (memoizedHandleSizeChange && isFullscreen) {
+      memoizedHandleSizeChange();
     }
-    if (handleVolumeChange && isMuted) {
-      handleVolumeChange();
+    if (memoizedHandleVolumeChange) {
+      memoizedHandleVolumeChange();
     }
-  }, [isFullscreen, isMuted]);
+  }, [isFullscreen, memoizedHandleSizeChange, memoizedHandleVolumeChange]);
 
   return (
     <div className="video-buttons">
@@ -47,17 +50,7 @@ const VideoButtons = ({ handleSizeChange, handleVolumeChange }) => {
           />
         )}
       </button>
-      <button onClick={handleToggleMuted} className="video-buttons__button">
-        {isMuted ? (
-          <img src={muteVolumeSrc} alt="Mute" className="video-buttons__icon" />
-        ) : (
-          <img
-            src={unmuteVolumeSrc}
-            alt="Unmute"
-            className="video-buttons__icon"
-          />
-        )}
-      </button>
+      {/* Removed mute button */}
     </div>
   );
 };

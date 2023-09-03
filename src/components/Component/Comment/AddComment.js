@@ -1,14 +1,12 @@
 import React from "react";
 import Avatar from "../UI/Avatar";
 import Button from "../UI/Button";
-import Divider from "../UI/Divider";
-import IconCounter from "../UI/IconCounter";
 import InputArea from "../UI/InputArea";
 import InputBox from "../UI/InputBox";
 import newCommentSrc from "../../../assets/images/icons/add_comment.svg";
 import "./AddComment.scss";
 
-const AddCommentForm = ({
+const AddComment = ({
   avatarSrc,
   userName,
   handleChange,
@@ -40,7 +38,7 @@ const AddCommentForm = ({
           />
         </span>
         <Button
-          text={"COMMENT"}
+          buttonText={"COMMENT"}
           iconSrc={newCommentSrc}
           handleClick={handleSubmit}
         />
@@ -49,4 +47,4 @@ const AddCommentForm = ({
   );
 };
 
-export default AddCommentForm;
+export default AddComment;

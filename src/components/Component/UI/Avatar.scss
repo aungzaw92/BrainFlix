@@ -1,6 +1,8 @@
 // Import partials for colors and responsiveness
-@use "../../../styles/partials/colors" as *;
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/global" as *;
 @use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/varaibles" as *;
 
 .avatar-component {
   &__image {
@@ -24,4 +26,6 @@
     overflow: hidden;
     background-color: $BrainFlix-Mercury;
   }
+
+ 
 }

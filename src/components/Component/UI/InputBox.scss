@@ -4,7 +4,8 @@
 @use "../../../styles/partials/responsive" as *;
 @use "../../../styles/partials/varaibles" as *;
 
-$input {
+.input {
+  &__container{
   box-sizing: border-box;
   background-color: $BrainFlix-Alabaster;
   border: $BrainFlix-Mercury solid $input-border;
@@ -13,6 +14,11 @@ $input {
   width: 100%;
   display: flex;
   align-items: center;
+  outline: none;
+  &:focus-within {
+    border: $input-border $BrainFlix-Blue solid;
+  }
+}
 
   &__icon {
     padding-left: $input-padding-mobile;
@@ -26,7 +32,7 @@ $input {
   &__text-field {
     color: $BrainFlix-Black;
     background-color: transparent;
-    font-family: $font-primary;
+    font-family: $primary-font;
     height: 100%;
     width: 100%;
     padding: $input-padding-mobile;
@@ -34,10 +40,10 @@ $input {
     outline: none;
 
     // Apply input font styles
-    @include inputFontStyles;
+    @include inputFont;
 
     &::placeholder {
-      font-family: $font-primary;
+      font-family: $primary-font;
       color: $BrainFlix-Black;
     }
   }
@@ -47,7 +53,7 @@ $input {
   }
 
   &__label {
-    @include labelFontStyles;
+    @include labelFont;
     color: $BrainFlix-Silver;
   }
 }

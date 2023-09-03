@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import playIcon from "../../../assets/images/icons/play.svg";
-import pauseIcon from "../../assets/images/icons/pause.svg";
+import pauseIcon from "../../../assets/images/icons/pause.svg";
 import "./PlayButton.scss";
 
 const PlayButton = ({ handleClick }) => {
@@ -10,11 +10,15 @@ const PlayButton = ({ handleClick }) => {
     setIsPlaying(!isPlaying);
   };
 
-  useEffect(() => {
+  const memoizedHandleClick = useCallback(() => {
     if (handleClick && isPlaying) {
       handleClick();
     }
-  }, [isPlaying]);
+  }, [handleClick, isPlaying]);
+
+  useEffect(() => {
+    memoizedHandleClick();
+  }, [memoizedHandleClick]);
 
   return (
     <button onClick={handleTogglePlay} className="play-button">
