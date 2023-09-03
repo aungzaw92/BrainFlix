@@ -1,17 +1,17 @@
 import React from "react";
 import "./VideoCard.scss";
 
-const VideoCard = ({ videoInfo, handleClick }) => {
-  const { title, channel, image, id } = videoInfo;
+const VideoCard = ({ video, handleClick }) => {
+  const { title, channel, image, id } = video;
 
   return (
-    <div className="video-card">
+    <div className="video-card" id="id">
       <img
         src={image}
         alt={title}
         className="video-card__image"
-        onClick={handleClick}
-        id={id}
+        onClick={() =>{handleClick(id)}}
+        
       />
       <span className="video-card__info-container">
         <h3 className="video-card__title">{title}</h3>

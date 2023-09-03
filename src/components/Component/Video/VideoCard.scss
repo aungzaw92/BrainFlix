@@ -16,6 +16,9 @@
     object-fit: cover;
     overflow: hidden;
     border-radius: $video-card-border-radius;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &__info-container {

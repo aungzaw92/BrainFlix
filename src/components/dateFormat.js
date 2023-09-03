@@ -15,4 +15,4 @@ const getFormattedDate = (timestamp) => {
   return `${month}/${day}/${year}`;
 };
 
-export default { getFormattedDate };
+export default  getFormattedDate ;

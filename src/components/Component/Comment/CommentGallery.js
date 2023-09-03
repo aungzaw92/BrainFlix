@@ -6,7 +6,9 @@ const CommentGallery = ({ comments }) => {
       {comments ? (
         <>
           {comments.map((comment) => {
-            return <Comment key={comment.id} commentObject={comment} />;
+            return (
+              <Comment key={`comment-${comment.id}`} commentObject={comment} />
+            );
           })}
         </>
       ) : null}

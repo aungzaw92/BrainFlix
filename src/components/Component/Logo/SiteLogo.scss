@@ -6,4 +6,9 @@
 .site-logo {
   background-color: $BrainFlix-White;
   max-height: $max-width;
+  &__image {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

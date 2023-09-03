@@ -1,8 +1,7 @@
-@use "../../styles/partials/colors" as *;
-@use "../../styles/partials/typography" as *;
-@use "../../styles/partials/responsive" as *;
-@use "../../styles/partials/variables" as *;
-
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/varaibles" as *;
 .add-comment {
   display: flex;
   box-sizing: content-box;
@@ -44,7 +43,8 @@
   }
 
   &__input-area {
-    width: calc(100% - $spacing-between-components-mobile * 2);
+    // width: calc(100% - $spacing-between-components-mobile * 2);
+    width: 100%;
 
     @include tablet {
       display: none;

@@ -1,4 +1,6 @@
 import logo from "../../../assets/images/logo/BrainFlix-logo.svg";
+import "./SiteLogo.scss";
+
 const SiteLogo = ({ handleClick }) => {
   return (
     <span className="site-logo">

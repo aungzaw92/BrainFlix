@@ -1,18 +1,20 @@
 @use "../../../styles/partials/fonts" as *;
 @use "../../../styles/partials/global" as *;
 @use "../../../styles/partials/responsive" as *;
-@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/varaibles" as *;
 
 .comment-section {
   display: flex;
   justify-items: flex-start;
-  align-items: center;
+  align-items: normal;
   width: 100%;
   margin: auto;
   gap: 2rem;
   margin-bottom: 3rem;
+  padding: 10px;
 
   @include mobile {
     flex-direction: column;
+    padding: 13.5px;
   }
 }

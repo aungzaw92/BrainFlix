@@ -1,4 +1,3 @@
-import React from "react";
 import "./InputBox.scss";
 
 const InputBoxComponent = ({
@@ -8,17 +7,19 @@ const InputBoxComponent = ({
   iconSource,
   inputId,
   inputLabel,
+  iconAlt,
+  customRef, // Add a prop for the alt text of the icon
 }) => {
   return (
-    <>
+    <span className="input">
       {inputLabel ? (
-        <label htmlFor={inputId} className="input-box-component__label">
+        <label htmlFor={inputId} className="input__label">
           {inputLabel}
         </label>
       ) : null}
-      <span className="input-box-component">
+      <span className="input__container">
         {iconSource ? (
-          <img src={iconSource} className="input-box-component__icon"></img>
+          <img src={iconSource} className="input__icon"></img>
         ) : null}
         <input
           id={inputId}
@@ -26,10 +27,11 @@ const InputBoxComponent = ({
           placeholder={inputPlaceholder}
           value={inputValue}
           onChange={handleInputChange}
-          className="input-box-component__text-field"
+          className="input__text-field"
+          ref={customRef}
         />
       </span>
-    </>
+    </span>
   );
 };
 
