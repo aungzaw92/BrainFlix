@@ -1,4 +1,3 @@
-// Import partials for colors, typography, and responsiveness
 @use "../../../styles/partials/fonts" as *;
 @use "../../../styles/partials/global" as *;
 @use "../../../styles/partials/responsive" as *;
@@ -12,14 +11,13 @@
   border-radius: $button-border-radius;
   display: flex;
   align-items: center;
-
   position: relative;
 
-  // Adjust styles for medium screens
   @include tablet {
-    min-width: 9.375rem;
+    min-width: $button-width;
     padding: 0 $button-padding-small;
-    width: 9.375rem;
+
+    width: $button-width;
   }
 
   &__icon {
@@ -34,17 +32,17 @@
     width: 100%;
     text-transform: uppercase;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-70%, -90%);
+    top: 18%;
+    left: 0%;
 
-    // Adjust styles for tablet screens
     @include tablet {
       width: auto;
       position: relative;
       justify-self: center;
       text-align: left;
       margin-left: $button-padding-small;
+      top: 10%;
+      left: 0%;
     }
   }
 

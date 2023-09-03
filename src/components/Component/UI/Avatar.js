@@ -1,7 +1,7 @@
 import React from "react";
 import "./Avatar.scss";
 
-const AvatarComponent = ({ avatarSource, userName }) => {
+const Avatar = ({ avatarSource, userName }) => {
   return (
     <div className="avatar-component__container">
       {avatarSource ? (
@@ -17,4 +17,4 @@ const AvatarComponent = ({ avatarSource, userName }) => {
   );
 };
 
-export default AvatarComponent;
+export default Avatar;

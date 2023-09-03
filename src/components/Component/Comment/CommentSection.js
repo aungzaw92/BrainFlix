@@ -32,7 +32,7 @@ const CommentSection = ({
         value={newCommentText}
         handleChange={handleNewCommentChange}
         handleSubmit={handlePostNewComment}
-        avatarSrc={userAvatar}
+        avatarSource={userAvatar}
         userName={userName}
       />
 

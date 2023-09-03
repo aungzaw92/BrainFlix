@@ -6,13 +6,15 @@
 .comment-section {
   display: flex;
   justify-items: flex-start;
-  align-items: center;
+  align-items: normal;
   width: 100%;
   margin: auto;
   gap: 2rem;
   margin-bottom: 3rem;
+  padding: 10px;
 
   @include mobile {
     flex-direction: column;
+    padding: 13.5px;
   }
 }

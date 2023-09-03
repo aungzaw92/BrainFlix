@@ -1,7 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import VideoPage from "./pages/video/VideoPage";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+import VideoPage from "./pages/video/VideoPage";
 import NavBar from "./components/Component/NavBar/NavBar";
 
 import avatarImg from "./assets/images/Mohan-muruge.jpg";
@@ -38,4 +39,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById("root")).render(<RouterProvider router={router} />);
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <RouterProvider router={router} />
+);
+

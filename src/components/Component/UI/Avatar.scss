@@ -11,6 +11,7 @@
     width: $max-diameter-mobile;
     object-fit: cover;
     overflow: hidden;
+    display: block;
 
     // Adjust size for Tablet screens
     @include tablet {

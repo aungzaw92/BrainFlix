@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import placeholderImage from "../../../assets/images/Upload-video-preview.jpg";
-import uploadIcon from "../../../assets/images/icons/upload.svg";
+import publishIcon from "../../../assets/images/icons/publish.svg";
+
 import Button from "../UI/Button";
 import InputArea from "../UI/InputArea";
 import InputBox from "../UI/InputBox";
@@ -27,20 +28,21 @@ const UploadForm = ({ handleSubmit }) => {
         </span>
         <span className="upload-form__input-container">
           <InputBox
-            label={"Title your video"}
-            placeholder={"Add a title to your video"}
+            inputLabel={"Title your video"}
+            inputPlaceholder={"Add a title to your video"}
             customRef={titleRef}
           />
           <InputArea
-            label={"Add a video description"}
-            placeholder={"Add a description to your video"}
+            inputLabel={"Add a video description"}
+            inputPlaceholder={"Add a description to your video"}
+
             customRef={descriptionRef}
           />
         </span>
       </div>
       <Divider />
       <div className="upload-form__button-container">
-        <Button buttonText={"publish"} iconSrc={uploadIcon} />
+        <Button buttonText={"publish"} iconSource={publishIcon} />
         <button className="upload-form__link">Cancel</button>
       </div>
     </form>

@@ -20,17 +20,26 @@ const MediaStats = ({ mediaObject }) => {
 
   return (
     <>
-    <div className="media-stats">
-      <section className="media-stats__section">
-        <h3 className="media-stats__channel">By {channel}</h3>
-        <p className="media-stats__date">{formattedDate}</p>
-      </section>
-      
-      <section className="media-stats__section">
-        <IconCounter iconSrc={eyeballIcon} alt={"views"} count={views} />
-        <IconCounter iconSrc={heartIcon} alt={"likes"} count={likes} />
-      </section>
-    </div>
+      <div className="media-stats">
+        <section className="media-stats__section">
+          <h3 className="media-stats__channel">By {channel}</h3>
+          <p className="media-stats__date">{formattedDate}</p>
+        </section>
+
+        <section className="media-stats__section">
+          <IconCounter
+            iconSource={eyeballIcon}
+            altText={"views"}
+            counter={views}
+          />
+          <IconCounter
+            iconSource={heartIcon}
+            altText={"likes"}
+            counter={likes}
+          />
+        </section>
+      </div>
+ 
     </>
   );
 };

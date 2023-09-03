@@ -15,17 +15,17 @@ const NavBar = ({ userAvatar, userName }) => {
       <SiteLogo handleClick={() => navigate("../")} />
       <div className="navbar__search">
         <span className="navbar__search-box">
-          <InputBox placeholder={"Search"} iconSrc={searchIcon} />
+          <InputBox placeholder={"Search"} iconSource={searchIcon} />
         </span>
-        <Avatar userName={userName} avatarSrc={userAvatar} />
+        <Avatar userName={userName} avatarSource={userAvatar} />
       </div>
 
       <Button
         buttonText="Upload"
-        iconSrc={uploadIcon}
+        iconSource={uploadIcon}
         handleClick={() => navigate("../upload")}
       />
-      <Avatar userName={userName} avatarSrc={avatarImg} />
+      <Avatar userName={userName} avatarSource={avatarImg} />
     </div>
   );
 };
