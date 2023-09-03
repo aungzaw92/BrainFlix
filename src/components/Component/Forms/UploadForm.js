@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import placeholderImage from "../../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../../assets/images/icons/publish.svg";
+
 import Button from "../UI/Button";
 import InputArea from "../UI/InputArea";
 import InputBox from "../UI/InputBox";
@@ -34,6 +35,7 @@ const UploadForm = ({ handleSubmit }) => {
           <InputArea
             inputLabel={"Add a video description"}
             inputPlaceholder={"Add a description to your video"}
+
             customRef={descriptionRef}
           />
         </span>
