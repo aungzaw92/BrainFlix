@@ -39,7 +39,6 @@ const MediaStats = ({ mediaObject }) => {
           />
         </section>
       </div>
- 
     </>
   );
 };

@@ -8,7 +8,7 @@ const InputBoxComponent = ({
   inputId,
   inputLabel,
   iconAlt,
-  customRef, // Add a prop for the alt text of the icon
+  customRef,
 }) => {
   return (
     <span className="input">

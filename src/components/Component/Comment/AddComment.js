@@ -1,11 +1,14 @@
 import React from "react";
+
 import avatar from "../../../assets/images/Mohan-muruge.jpg";
+import newCommentSrc from "../../../assets/images/icons/add_comment.svg";
 
-import Avatar from "../UI/Avatar";
 import Button from "../UI/Button";
-import InputArea from "../UI/InputArea";
-import InputBox from "../UI/InputBox";
+import InputAreaComponent from "../UI/InputArea";
+import InputBoxComponent from "../UI/InputBox";
+import AvatarComponent from "../UI/Avatar";
 
+import "./AddComment.scss";
 
 const AddComment = ({
   avatarSrc,
@@ -41,9 +44,7 @@ const AddComment = ({
         </span>
         <Button
           buttonText={"COMMENT"}
-
           iconSource={newCommentSrc}
-
           handleClick={handleSubmit}
         />
       </div>
