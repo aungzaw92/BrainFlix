@@ -1,11 +1,9 @@
-// Import partials for colors, typography, responsiveness, and variables
 @use "../../../styles/partials/global" as *;
 @use "../../../styles/partials/fonts" as *;
 @use "../../../styles/partials/responsive" as *;
 @use "../../../styles/partials/varaibles" as *;
 
 .input-area {
-  
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -13,15 +11,15 @@
 
   &__label {
     @include labelFont;
-    color: $BrainFlix-Silver; 
+    color: $BrainFlix-Silver;
   }
 
   &__content {
     font-family: $primary-font;
-    color: $BrainFlix-Black; 
-    background-color: $BrainFlix-Alabaster; 
+    color: $BrainFlix-Black;
+    background-color: $BrainFlix-Alabaster;
     padding: $input-padding-mobile;
-    border: $BrainFlix-Mercury solid $input-border; 
+    border: $BrainFlix-Mercury solid $input-border;
     border-radius: $input-radius;
     outline: none;
     width: 100%;
@@ -34,7 +32,7 @@
     }
 
     &:focus-within {
-      border: $input-border $BrainFlix-Blue solid; 
+      border: $input-border $BrainFlix-Blue solid;
     }
   }
 }

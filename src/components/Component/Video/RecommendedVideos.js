@@ -5,8 +5,8 @@ import "./RecommendedVideos.scss";
 const RecommendedVideos = ({ videos, currentVideo, handleClick }) => {
   const navigate = useNavigate();
   const handleGoToVideoPage = (id) => {
-    navigate (`../${id}`, { state: {videos}});
-  }
+    navigate(`../${id}`, { state: { videos } });
+  };
   return (
     <section className="recommended">
       <h2 className="recommended__heading">Next Videos</h2>
@@ -21,7 +21,7 @@ const RecommendedVideos = ({ videos, currentVideo, handleClick }) => {
                 />
               );
             }
-            return null; // Add this line to return null for non-matching videos
+            return null;
           })
         : null}
     </section>

@@ -1,3 +1,4 @@
+// Import partials for colors, typography, and responsiveness
 @use "../../../styles/partials/fonts" as *;
 @use "../../../styles/partials/global" as *;
 @use "../../../styles/partials/responsive" as *;
@@ -11,12 +12,13 @@
   border-radius: $button-border-radius;
   display: flex;
   align-items: center;
+
   position: relative;
 
+  // Adjust styles for medium screens
   @include tablet {
     min-width: $button-width;
     padding: 0 $button-padding-small;
-
     width: $button-width;
   }
 
@@ -35,6 +37,7 @@
     top: 18%;
     left: 0%;
 
+    // Adjust styles for tablet screens
     @include tablet {
       width: auto;
       position: relative;

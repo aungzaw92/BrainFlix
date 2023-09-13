@@ -26,6 +26,9 @@ const getVideo = async (id) => {
       `https://project-2-api.herokuapp.com/videos/${id}`,
       config
     );
+    // const { name, description, likes, views } = response.data;
+
+    // return { name, description, likes, views };
     return response.data;
   } catch (error) {
     console.error("Error response status:", error.response.status);
