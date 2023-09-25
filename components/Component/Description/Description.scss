@@ -1,0 +1,15 @@
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/varaibles" as *;
+
+.video-description {
+  gap: $spacing-between-components-mobile;
+  padding: $spacing-between-components-mobile;
+  display: flex;
+  flex-direction: column;
+
+  @include desktop {
+    padding-right: 0;
+  }
+}
