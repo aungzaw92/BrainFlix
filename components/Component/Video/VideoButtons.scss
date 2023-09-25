@@ -1,0 +1,28 @@
+@use "../../../styles/partials/fonts" as *;
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/responsive" as *;
+@use "../../../styles/partials/varaibles" as *;
+
+.media-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($BrainFlix-DarkBlack, 0.5);
+  border-radius: $default-border-radius;
+  height: 100%;
+
+  &__button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 100%;
+    padding: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
