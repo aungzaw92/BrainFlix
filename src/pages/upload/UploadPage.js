@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import UploadForm from "../../components/Component/Forms/UploadForm";
 import Divider from "../../components/Component/UI/Divider";
+import apiService from "../../components/apiService";
 import "./UploadPage.scss";
 
 const UploadPage = () => {
@@ -10,7 +11,11 @@ const UploadPage = () => {
     const title = titleRef.current.value;
     const description = descriptionRef.current.value;
     console.log(title, description);
-    navigate("../");
+    const newVideo = { title, description };
+
+    apiService.postVideo(newVideo).then((response) => {
+      navigate("../");
+    });
   };
   return (
     <main className="upload-page">

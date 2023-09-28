@@ -1,18 +1,17 @@
-import axios from "axios";
-console.log(axios.isCancel("something"));
+import axios from 'axios';
+console.log(axios.isCancel('something'));
 
 const config = {
-  params: {
-    api_key: "d1a1d8c2-23d3-4531-b943-200991a86691",
+  headers: {
+    'x-api-key': process.env.REACT_APP_BACKEND_URL,
   },
 };
 
+const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+
 const getVideos = async () => {
   try {
-    const response = await axios.get(
-      "https://project-2-api.herokuapp.com/videos",
-      config
-    );
+    const response = await axios.get(`${BACKEND_URL}/videos`, config);
     return response.data;
   } catch (error) {
     console.error(error);
@@ -22,17 +21,27 @@ const getVideos = async () => {
 
 const getVideo = async (id) => {
   try {
-    const response = await axios.get(
-      `https://project-2-api.herokuapp.com/videos/${id}`,
-      config
-    );
-    // const { name, description, likes, views } = response.data;
+    const response = await axios.get(`${BACKEND_URL}/videos/${id}`, config);
+    console.log('Hello World', response);
 
-    // return { name, description, likes, views };
     return response.data;
   } catch (error) {
-    console.error("Error response status:", error.response.status);
-    console.error("Error response data:", error.response.data);
+    console.error('Error response status:', error.response.status);
+    console.error('Error response data:', error.response.data);
+    return undefined;
+  }
+};
+
+const postVideo = async (data) => {
+  try {
+    const response = await axios.post(
+      `${process.env.REACT_APP_BACKEND_URL}/videos/`,
+      data,
+      config
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
     return undefined;
   }
 };
@@ -40,7 +49,7 @@ const getVideo = async (id) => {
 const postComment = async (id, comment) => {
   try {
     const response = await axios.post(
-      `https://project-2-api.herokuapp.com/videos/${id}/comments`,
+      `${BACKEND_URL}/videos/${id}/comments`,
       comment,
       config
     );
@@ -51,4 +60,5 @@ const postComment = async (id, comment) => {
   }
 };
 
-export default { getVideos, getVideo, postComment };
+const apiService = { getVideos, getVideo, postComment, postVideo };
+export default apiService;

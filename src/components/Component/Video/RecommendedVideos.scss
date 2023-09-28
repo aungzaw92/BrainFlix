@@ -9,4 +9,8 @@
     padding-left: $spacing-between-components-mobile;
     color: $BrainFlix-Silver;
   }
+  &__list {
+    margin: 0;
+    padding: 0;
+  }
 }

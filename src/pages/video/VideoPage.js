@@ -1,13 +1,12 @@
-import { useParams, useLocation } from "react-router-dom";
-import { useEffect, useState, useMemo } from "react";
-import VideoPlayer from "../../components/Component/Video/VideoPlayer";
-import apiService from "../../components/apiService";
-import Description from "../../components/Component/Description/Description";
-import CommentSection from "../../components/Component/Comment/CommentSection";
-import RecommendedVideos from "../../components/Component/Video/RecommendedVideos";
-import avatarImg from "../../assets/images/Mohan-muruge.jpg";
+import { useParams, useLocation } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import VideoPlayer from '../../components/Component/Video/VideoPlayer';
+import apiService from '../../components/apiService';
+import Description from '../../components/Component/Description/Description';
+import CommentSection from '../../components/Component/Comment/CommentSection';
+import RecommendedVideos from '../../components/Component/Video/RecommendedVideos';
 
-import "./VideoPage.scss";
+import './VideoPage.scss';
 
 const VideoPage = () => {
   const [video, setVideo] = useState({});
@@ -16,31 +15,42 @@ const VideoPage = () => {
   const { state } = useLocation();
 
   useEffect(() => {
-    if (params?.id) {
-      apiService.getVideo(params.id).then((response) => {
-        setVideo(response);
-      });
-    } else if (!params?.id && videos.length) {
-      // Check for videos.length
-      apiService.getVideo(videos[0].id).then((response) => {
-        setVideo(response);
-      });
-    }
-  }, [videos, params?.id]);
-
-  useMemo(() => {
     if (state?.videos) {
       setVideos(state.videos);
+      setVideo(state.videos[0]);
+      console.log(state.videos);
     } else {
       apiService.getVideos().then((response) => {
         setVideos(response || []); // Ensure that the response is an array
       });
     }
-  }, [videos, state?.videos]); // Add state?.videos to the dependency array
+  }, [state?.videos]);
+
+  // useEffect(() => {
+  //   if (params?.id) {
+  //     apiService.getVideo(params.id).then((response) => {
+  //       setVideo(response);
+  //     });
+  //   } else if (!params?.id && videos.length && !video) {
+  //     // Check for videos.length
+  //     apiService.getVideo(videos[0].id).then((response) => {
+  //       setVideo(response);
+  //     });
+  //   }
+  // }, [videos, params?.id]);
+
+  useEffect(() => {
+    if (videos.length > 0) {
+      const currentid = params.id ? params.id : videos[0].id;
+      apiService.getVideo(currentid).then((response) => {
+        setVideo(response);
+      });
+    }
+  }, [videos, params?.id]);
 
   const handleNewComment = async (text) => {
     const comment = {
-      name: "User",
+      name: 'User',
       comment: text,
       timestamp: new Date(),
     };
@@ -56,7 +66,7 @@ const VideoPage = () => {
     try {
       // Send the request to post the comment
       const response = await apiService.postComment(video.id, {
-        name: "User",
+        name: 'User',
         comment: text,
       });
 
@@ -73,7 +83,7 @@ const VideoPage = () => {
       }
     } catch (error) {
       // Handle errors here
-      console.error("Error posting comment:", error);
+      console.error('Error posting comment:', error);
       // Revert the UI changes if an error occurs
       setVideo((prevVideo) => ({
         ...prevVideo,
@@ -91,8 +101,8 @@ const VideoPage = () => {
           {video.comments ? (
             <CommentSection
               comments={video.comments}
-              avatarImg={avatarImg}
-              userName={"User"}
+              avatarImg={`${process.env.REACT_APP_BACKEND_URL}/public/Mohan-muruge.jpg`}
+              userName={'User'}
               handleNewComment={handleNewComment}
             />
           ) : null}

@@ -12,7 +12,11 @@ import Divider from "./components/Component/UI/Divider";
 const AppLayout = () => {
   return (
     <>
-      <NavBar avatarImg={avatarImg} userName={"User"} />
+      {/* <NavBar avatarImg={avatarImg} userName={"User"} /> */}
+      <NavBar
+        avatarImg={`${process.env.REACT_APP_BACKEND_URL}/images/Mohan-muruge.jpg`}
+        userName={"User"}
+      />
       <Divider />
       <Outlet />
     </>
