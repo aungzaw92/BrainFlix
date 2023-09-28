@@ -12,7 +12,7 @@ const NavBar = ({ userAvatar, userName }) => {
   const navigate = useNavigate();
   return (
     <div className="navbar">
-      <SiteLogo handleClick={() => navigate("../")} />
+      <SiteLogo handleClick={() => navigate("/")} />
       <div className="navbar__search">
         <span className="navbar__search-box">
           <InputBox placeholder={"Search"} iconSource={searchIcon} />

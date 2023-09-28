@@ -1,5 +1,4 @@
 import { useRef } from "react";
-import placeholderImage from "../../../assets/images/Upload-video-preview.jpg";
 import publishIcon from "../../../assets/images/icons/publish.svg";
 import Button from "../UI/Button";
 import InputArea from "../UI/InputArea";
@@ -23,7 +22,10 @@ const UploadForm = ({ handleSubmit }) => {
       <div className="upload-form__content">
         <span className="upload-form__image-container">
           <h3 className="upload-form__label">video thumbnail</h3>
-          <img src={placeholderImage} className="upload-form__image" />
+          <img
+            src={`${process.env.REACT_APP_BACKEND_URL}/public/Upload-video-preview.jpg`}
+            className="upload-form__image"
+          />
         </span>
         <span className="upload-form__input-container">
           <InputBox

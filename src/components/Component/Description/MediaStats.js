@@ -6,8 +6,6 @@ import IconCounter from "../UI/IconCounter";
 
 import "./MediaStats.scss";
 
-console.log("Aung", getFormattedDate);
-
 const MediaStats = ({ mediaObject }) => {
   const { views, likes, channel, timestamp } = mediaObject;
   const [formattedDate, setFormattedDate] = useState("");
